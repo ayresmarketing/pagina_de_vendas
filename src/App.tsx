@@ -1,14 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import {
-  Zap, Brain, BarChart3, Target, Trophy, Shield, Droplets,
-  ChevronDown, Star, CheckCircle2, ArrowRight, Sparkles,
-  Clock, TrendingUp, Users, Lock, Menu, X, Play,
-  Calendar, Coins, Bot, Activity
-} from 'lucide-react'
 import ParticleBackground from './components/ParticleBackground'
-import Navbar from './components/Navbar'
 import HeroSection from './components/HeroSection'
 import ProblemSection from './components/ProblemSection'
 import FeaturesSection from './components/FeaturesSection'
@@ -23,10 +13,9 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen" style={{ background: '#0a0a0a' }}>
+    <div style={{ background: '#0a0a0a', width: '100%', overflowX: 'hidden', position: 'relative' }}>
       <ParticleBackground />
-      <Navbar />
-      <main>
+      <main style={{ width: '100%', overflowX: 'hidden' }}>
         <HeroSection />
         <ProblemSection />
         <FeaturesSection />
