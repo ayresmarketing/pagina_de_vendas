@@ -6,6 +6,7 @@ import AgendaSection from './components/AgendaSection'
 import FinanceSection from './components/FinanceSection'
 import AISection from './components/AISection'
 import HydrationSection from './components/HydrationSection'
+import DuelSection from './components/DuelSection'
 import ForWhoSection from './components/ForWhoSection'
 import PricingSection from './components/PricingSection'
 import FAQSection from './components/FAQSection'
@@ -23,6 +24,7 @@ export default function App() {
         <FinanceSection />
         <AISection />
         <HydrationSection />
+        <DuelSection />
         <ForWhoSection />
         <PricingSection />
         <FAQSection />
