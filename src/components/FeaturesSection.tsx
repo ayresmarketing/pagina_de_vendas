@@ -19,9 +19,9 @@ const habilidades = [
     pts: '★★★★★',
   },
   {
-    icone: '📊',
-    titulo: 'Análise Comportamental',
-    desc: 'Detecta falhas e aplica ajustes automáticos para você nunca parar.',
+    icone: '💰',
+    titulo: 'Controle Financeiro',
+    desc: 'Tenha o controle das suas finanças por categorias.',
     cor: '#a78bfa',
     nivel: 'Habilidade Rara',
     pts: '★★★★☆',

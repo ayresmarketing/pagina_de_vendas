@@ -1,8 +1,9 @@
 import { useEffect, useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Zap, ArrowRight, Star, Shield, ChevronDown } from 'lucide-react'
+import { Zap, ArrowRight, Star, ChevronDown } from 'lucide-react'
 
-const TEXTO_COMPLETO = 'Sua recompensa não precisa ser no videogame, pode ser real.'
+const PARTE1 = 'Sua recompensa não precisa ser no videogame, '
+const PARTE2 = 'pode ser real.'
 
 const missoes = [
   { tipo: 'Missão', label: 'Estudar 30 minutos', cor: '#00ff88', icone: '📚', xp: '+50 XP' },
@@ -13,18 +14,22 @@ const missoes = [
 ]
 
 function TextoDigitando() {
-  const [exibido, setExibido] = useState('')
+  const [exibido1, setExibido1] = useState('')
+  const [mostrarParte2, setMostrarParte2] = useState(false)
   const [pronto, setPronto] = useState(false)
   const idx = useRef(0)
 
   useEffect(() => {
     const t = setInterval(() => {
-      if (idx.current < TEXTO_COMPLETO.length) {
-        setExibido(TEXTO_COMPLETO.slice(0, idx.current + 1))
+      if (idx.current < PARTE1.length) {
+        setExibido1(PARTE1.slice(0, idx.current + 1))
         idx.current++
       } else {
-        setPronto(true)
         clearInterval(t)
+        setTimeout(() => {
+          setMostrarParte2(true)
+          setPronto(true)
+        }, 200)
       }
     }, 38)
     return () => clearInterval(t)
@@ -32,12 +37,26 @@ function TextoDigitando() {
 
   return (
     <span>
-      {exibido}
+      {exibido1}
       {!pronto && (
         <span
           className="inline-block w-0.5 h-8 md:h-14 ml-1 align-middle"
           style={{ background: '#00ff88', animation: 'piscar 0.8s step-end infinite' }}
         />
+      )}
+      {mostrarParte2 && (
+        <motion.span
+          initial={{ clipPath: 'inset(0 100% 0 0)', filter: 'blur(8px) brightness(3)', opacity: 0.6 }}
+          animate={{ clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px) brightness(1)', opacity: 1 }}
+          transition={{ duration: 1.4, ease: 'easeOut' }}
+          style={{
+            display: 'inline-block',
+            color: '#00ff88',
+            textShadow: '0 0 24px rgba(0,255,136,0.9), 0 0 48px rgba(0,255,136,0.4)',
+          }}
+        >
+          {PARTE2}
+        </motion.span>
       )}
     </span>
   )
@@ -140,7 +159,7 @@ export default function HeroSection() {
           </div>
           <div className="hidden sm:block">
             <p className="text-xs font-black tracking-widest" style={{ color: '#00ff88', letterSpacing: '0.12em', lineHeight: 1.1 }}>
-              MINHA VIDA
+              SUA VIDA
             </p>
             <p className="text-xs font-black tracking-widest" style={{ color: '#00d4ff', letterSpacing: '0.12em', lineHeight: 1.1 }}>
               É UM JOGO
@@ -245,10 +264,6 @@ export default function HeroSection() {
                 Começar meu jogo
                 <ArrowRight size={18} />
               </motion.a>
-              <div className="flex items-center gap-2">
-                <Shield size={14} style={{ color: '#00ff88' }} />
-                <span className="text-sm" style={{ color: '#a0a0b0' }}>Sem compromisso</span>
-              </div>
             </motion.div>
 
             {/* Prova social */}

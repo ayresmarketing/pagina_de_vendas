@@ -22,7 +22,7 @@ export default function Footer() {
               <Zap size={18} color="#050510" strokeWidth={3} />
             </div>
             <span className="font-black tracking-widest text-sm" style={{ color: '#ffffff', letterSpacing: '0.15em' }}>
-              MINHA VIDA É UM JOGO
+              SUA VIDA É UM JOGO
             </span>
           </motion.div>
 
@@ -49,7 +49,7 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-between w-full gap-4">
             <p className="text-xs" style={{ color: '#a0a0b0' }}>
-              © 2026 Minha Vida É Um Jogo. Todos os direitos reservados.
+              © 2026 Sua Vida É Um Jogo. Todos os direitos reservados.
             </p>
             <div className="flex items-center gap-2">
               <div
