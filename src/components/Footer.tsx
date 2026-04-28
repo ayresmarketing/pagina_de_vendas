@@ -59,6 +59,30 @@ export default function Footer() {
               <span className="text-xs font-mono" style={{ color: '#00ff88' }}>SISTEMA ONLINE</span>
             </div>
           </div>
+
+          <div className="flex items-center gap-3 mt-2">
+            <a
+              href="https://www.ayresmarketing.com/politica-privacidade-suavidaeumjogo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#606070', fontSize: '0.65rem', textDecoration: 'none' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#808090')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#606070')}
+            >
+              Política de Privacidade
+            </a>
+            <span style={{ color: '#606070', fontSize: '0.65rem' }}>·</span>
+            <a
+              href="https://www.ayresmarketing.com/termosdeuso_suavidaeumjogo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#606070', fontSize: '0.65rem', textDecoration: 'none' }}
+              onMouseEnter={e => (e.currentTarget.style.color = '#808090')}
+              onMouseLeave={e => (e.currentTarget.style.color = '#606070')}
+            >
+              Termos de Uso
+            </a>
+          </div>
         </div>
       </div>
     </footer>
