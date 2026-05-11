@@ -132,7 +132,9 @@ export default function PricingSection() {
               {/* CTA */}
               <div className="text-center">
                 <motion.a
-                  href="#"
+                  href="https://buy.stripe.com/00w28k6jA4Qb5J20CQdIA01"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="botao-coracao inline-flex items-center gap-3 px-10 sm:px-14 py-5 rounded-2xl font-black text-lg mb-5"
                   style={{
                     background: 'linear-gradient(135deg, #00ff88, #00d4ff)',

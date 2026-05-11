@@ -78,7 +78,7 @@ export default function Navbar() {
           {/* CTA */}
           <div className="flex items-center gap-4">
             <motion.a
-              href="#pricing"
+              href="#preco"
               className="hidden md:flex items-center gap-2 px-5 py-2 rounded-lg font-bold text-sm tracking-wide"
               style={{
                 background: 'linear-gradient(135deg, #00ff88, #00d4ff)',
@@ -122,7 +122,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#pricing"
+                href="#preco"
                 className="flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-bold text-sm"
                 style={{
                   background: 'linear-gradient(135deg, #00ff88, #00d4ff)',
