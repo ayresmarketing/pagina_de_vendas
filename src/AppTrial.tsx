@@ -8,6 +8,7 @@ import AISection from './components/AISection'
 import HydrationSection from './components/HydrationSection'
 import DuelSection from './components/DuelSection'
 import ForWhoSection from './components/ForWhoSection'
+import TrialSection from './components/TrialSection'
 import PricingSection from './components/PricingSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
@@ -26,7 +27,8 @@ export default function AppTrial() {
         <HydrationSection />
         <DuelSection />
         <ForWhoSection />
-        <PricingSection checkoutUrl="https://buy.stripe.com/00w28k6jA4Qb5J20CQdIA01" />
+        <TrialSection />
+        <PricingSection checkoutUrl="https://buy.stripe.com/00w28k6jA4Qb5J20CQdIA01" isTrial />
         <FAQSection />
       </main>
       <Footer />

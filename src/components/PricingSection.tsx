@@ -4,6 +4,7 @@ import { CheckCircle2, Lock, ArrowRight, Zap } from 'lucide-react'
 
 interface Props {
   checkoutUrl: string
+  isTrial?: boolean
 }
 
 const itens = [
@@ -19,7 +20,7 @@ const itens = [
   '💧 Controle de hidratação',
 ]
 
-export default function PricingSection({ checkoutUrl }: Props) {
+export default function PricingSection({ checkoutUrl, isTrial = false }: Props) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.12 })
 
   return (
@@ -55,7 +56,7 @@ export default function PricingSection({ checkoutUrl }: Props) {
             style={{ background: 'rgba(0,255,136,0.08)', border: '1px solid rgba(0,255,136,0.3)' }}
           >
             <span className="text-xs font-black tracking-widest font-mono" style={{ color: '#00ff88' }}>
-              🏆 OFERTA ESPECIAL
+              {isTrial ? '🎮 30 DIAS GRÁTIS' : '🏆 OFERTA ESPECIAL'}
             </span>
           </motion.div>
 
@@ -63,8 +64,11 @@ export default function PricingSection({ checkoutUrl }: Props) {
             className="font-black mb-3"
             style={{ fontSize: 'clamp(1.7rem, 4.5vw, 3.2rem)', color: '#ffffff', lineHeight: 1.15 }}
           >
-            Hora de jogar:{' '}
-            <span style={{ color: '#00ff88' }}>por apenas</span>
+            {isTrial ? (
+              <>Comece grátis,{' '}<span style={{ color: '#00ff88' }}>jogue de verdade</span></>
+            ) : (
+              <>Hora de jogar:{' '}<span style={{ color: '#00ff88' }}>por apenas</span></>
+            )}
           </h2>
 
           <div className="flex items-end justify-center gap-2 mb-2">
@@ -83,6 +87,11 @@ export default function PricingSection({ checkoutUrl }: Props) {
             </span>
             <span className="text-xl font-bold" style={{ color: '#a0a0b0', marginBottom: '8px' }}>/mês</span>
           </div>
+          {isTrial && (
+            <p className="text-sm mt-1" style={{ color: '#a0a0b0' }}>
+              Grátis por 30 dias — depois apenas R$ 29,90/mês. Cancele quando quiser.
+            </p>
+          )}
         </motion.div>
 
         {/* Card principal */}
@@ -111,7 +120,7 @@ export default function PricingSection({ checkoutUrl }: Props) {
                 className="px-3 py-1 rounded-full text-xs font-mono font-black"
                 style={{ background: 'rgba(0,255,136,0.15)', color: '#00ff88', border: '1px solid rgba(0,255,136,0.3)' }}
               >
-                MAIS POPULAR
+                {isTrial ? '30 DIAS GRÁTIS' : 'MAIS POPULAR'}
               </div>
             </div>
 
@@ -150,14 +159,14 @@ export default function PricingSection({ checkoutUrl }: Props) {
                   whileTap={{ scale: 0.97 }}
                 >
                   <Zap size={20} />
-                  Comprar agora
+                  {isTrial ? 'Iniciar 30 dias grátis' : 'Comprar agora'}
                   <ArrowRight size={20} />
                 </motion.a>
 
                 <div className="flex items-center justify-center gap-2 mb-6">
                   <Lock size={13} color="#a0a0b0" />
                   <span className="text-sm" style={{ color: '#a0a0b0' }}>
-                    Pagamento seguro via protocolo criptografado
+                    {isTrial ? 'Sem cobrança nos primeiros 30 dias' : 'Pagamento seguro via protocolo criptografado'}
                   </span>
                 </div>
 
