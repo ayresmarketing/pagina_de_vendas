@@ -12,7 +12,7 @@ import PricingSection from './components/PricingSection'
 import FAQSection from './components/FAQSection'
 import Footer from './components/Footer'
 
-export default function App() {
+export default function AppTrial() {
   return (
     <div style={{ background: '#0a0a0a', width: '100%', overflowX: 'hidden', position: 'relative' }}>
       <ParticleBackground />
@@ -26,7 +26,7 @@ export default function App() {
         <HydrationSection />
         <DuelSection />
         <ForWhoSection />
-        <PricingSection checkoutUrl="https://buy.stripe.com/7sYdR28rI3M77RabhudIA00" />
+        <PricingSection checkoutUrl="https://buy.stripe.com/00w28k6jA4Qb5J20CQdIA01" />
         <FAQSection />
       </main>
       <Footer />

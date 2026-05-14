@@ -2,6 +2,10 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { CheckCircle2, Lock, ArrowRight, Zap } from 'lucide-react'
 
+interface Props {
+  checkoutUrl: string
+}
+
 const itens = [
   '🎯 Sistema completo de metas',
   '🧠 IA que cria seu plano',
@@ -15,7 +19,7 @@ const itens = [
   '💧 Controle de hidratação',
 ]
 
-export default function PricingSection() {
+export default function PricingSection({ checkoutUrl }: Props) {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.12 })
 
   return (
@@ -75,7 +79,7 @@ export default function PricingSection() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              19,90
+              29,90
             </span>
             <span className="text-xl font-bold" style={{ color: '#a0a0b0', marginBottom: '8px' }}>/mês</span>
           </div>
@@ -132,7 +136,7 @@ export default function PricingSection() {
               {/* CTA */}
               <div className="text-center">
                 <motion.a
-                  href="https://buy.stripe.com/00w28k6jA4Qb5J20CQdIA01"
+                  href={checkoutUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="botao-coracao inline-flex items-center gap-3 px-10 sm:px-14 py-5 rounded-2xl font-black text-lg mb-5"
