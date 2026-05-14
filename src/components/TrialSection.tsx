@@ -119,27 +119,6 @@ export default function TrialSection() {
           ))}
         </div>
 
-        {/* Banner de destaque */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          animate={inView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="rounded-2xl p-6 sm:p-8 text-center"
-          style={{
-            background: 'linear-gradient(135deg, rgba(0,212,255,0.06), rgba(0,255,136,0.06))',
-            border: '1px solid rgba(0,212,255,0.2)',
-          }}
-        >
-          <p
-            className="font-black mb-2"
-            style={{ fontSize: 'clamp(1.1rem, 3vw, 1.5rem)', color: '#ffffff' }}
-          >
-            🎮 Mais de 2.400 jogadores já estão no jogo
-          </p>
-          <p className="text-sm" style={{ color: '#a0a0b0' }}>
-            Comece hoje. Os primeiros 30 dias são por nossa conta.
-          </p>
-        </motion.div>
       </div>
     </section>
   )
